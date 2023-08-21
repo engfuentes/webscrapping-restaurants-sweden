@@ -5,3 +5,5 @@ It is also scraped another website for financial information of the restaurant a
 The data that is obtained is processed in a Scrapy pipeline and saved to a json file.
 
 To get the information from the javascript website is used the scrapy-playwright library that allows to use playwright with scrapy. To be able to use this library is necesary to run the program in wsl or linux.
+
+Next stage: Analyze the data with pandas and seaborn libraries.
