@@ -21,8 +21,13 @@ class SwedishRestaurantsPipeline:
 
         ## Change type names to english
         type_string = adapter.get('type')
-        if type_string == 'Restaurang':
+        if type_string == 'Restaurang' or 'restaurang' in type_string.lower():
             adapter['type'] = 'Restaurant'
+        elif 'pizza' in type_string.lower() or 'pizzeria' in type_string.lower():
+            adapter['type'] = 'Pizzeria'
+        else:
+            adapter['type'] = 'Other'
+
 
         ## Change type to int
         int_keys = ['num_employees', 'last_year_revenue', 'last_year_result_after_financial_assets']
